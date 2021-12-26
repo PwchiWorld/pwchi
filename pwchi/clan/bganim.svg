@@ -1,0 +1,44 @@
+<svg version="1.2" baseProfile="tiny-ps" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 804" width="1200" height="804">
+	<title>bganim</title>
+	<style>
+		tspan { white-space:pre }
+		.s0 { opacity: .2;fill: none;stroke: #b9e8f5;stroke-width: 4 } 
+		.s1 { opacity: .2;fill: #b9e8f5 } 
+		
+		#circle2,#circle4{animation: Roate 60s infinite;transform:rotate(0);transform-origin:center center;}
+	
+		#circle3{animation: Roate2 50s infinite;transform:rotate(0);transform-origin:center center;}
+		@keyframes Roate{
+		0%{transform:rotate(0);}
+		40%{transform:rotate(-210deg);opacity:.2;}
+		86%{transform:rotate(-310deg);opacity:.2;filter:drop-shadow(0 0 10px #000);}
+		100%{transform:rotate(-360deg);opacity:.2;}
+		}
+		@keyframes Roate2{
+		0%{transform:rotate(-10deg);}
+		30%{transform:rotate(-115deg);opacity:.2;}
+		40%{transform:rotate(-210deg);opacity:.2;}
+		50%{transform:rotate(30deg);opacity:.2;}
+		66%{transform:rotate(-150deg);opacity:.2;filter:drop-shadow(0 0 10px #000);}
+		76%{transform:rotate(0deg);opacity:.2;filter:drop-shadow(0 0 10px #000);}
+		90%{transform:rotate(10deg);opacity:.2;filter:drop-shadow(0 0 10px #000);}
+		100%{transform:rotate(-10deg);opacity:.4;}
+		}
+		#line1,#line2{animation:Move 15s infinite;}
+		@keyframes Move{
+		0%{transform:translateY(0);}
+		40%{transform:translateY(-30%);}
+		60%{transform:translateY(50%);}
+		80%{transform:translateY(10%);}
+		100%{transform:translateY(0);}
+		}
+		#circle4,#line2{animation-delay:5s;}
+	</style>
+	<path id="circle1" class="s0" d="m600.5 17.73c212.5 0 384.77 172.27 384.77 384.76c0 212.5-172.27 384.76-384.77 384.76c-212.5 0-384.77-172.27-384.77-384.76c0-212.5 172.27-384.76 384.77-384.76z" />
+		 <path id="circle2" class="s0" d="m328 18c61.86 0 112 50.14 112 112c0 61.86-50.14 112-112 112c-61.86 0-112-50.14-112-112c0-61.86 50.14-112 112-112z" />
+	<path id="circle3" class="s0" d="m973 268c32.58 0 59 26.42 59 59c0 32.58-26.42 59-59 59c-32.58 0-59-26.42-59-59c0-32.58 26.42-59 59-59z" />
+	<path id="circle4" class="s0" d="m363 512c32.58 0 59 26.42 59 59c0 32.58-26.42 59-59 59c-32.58 0-59-26.42-59-59c0-32.58 26.42-59 59-59z" />
+	<path id="line1" class="s1" d="m26 293h604v4h-604v-4z" />
+	<path id="line2" class="s1" d="m458 418h604v4h-604v-4z" />
+	<path id="plus1" class="s1" d="m827 539h-62v63h-9v-63h-63v-9h63v-62h9v62h62v9z" />
+</svg>
