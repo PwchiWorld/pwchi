@@ -1,0 +1,8 @@
+<svg version="1.2" baseProfile="tiny-ps" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 71 50" width="71" height="50">
+	<title>iconignias</title>
+	<style>
+		tspan { white-space:pre }
+		.s0 { fill: #a97c41 } 
+	</style>
+	<path id="ignia" class="s0" d="m38.25 36.64c-0.36 0.55-0.78 0.82-1.28 0.82c-0.49 0-0.92-0.27-1.28-0.82l-12.7-19.42c-0.36-0.55-0.54-1.2-0.54-1.95c0-0.75 0.18-1.4 0.54-1.95c0.36-0.55 0.78-0.82 1.28-0.82h25.4c0.49 0 0.92 0.27 1.28 0.82c0.36 0.55 0.54 1.2 0.54 1.95c0 0.75-0.18 1.4-0.54 1.95l-12.7 19.42v0z" />
+</svg>
