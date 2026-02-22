@@ -4,6 +4,16 @@
 ## Pwchi - Name
 Reversed first letters of **I** **H**ave **C**reated a **W**onderful **P**NG - ihcwp / **Pwchi**
 
+### Pronunciation
+* **poo-kee** - pwchi
+* **poo-kee-n** - pwchin
+* **poo-ke-la** - pwchela
+* **poo-kee-z** - pwchies
+
+### Avoid
+* <del>po-che-la</del> - pwchela
+* <del>po-chin</del> - pwchin
+* <del>pooch</de> - 
 
 ## Variations
 | **Variation Name** | **Reference** | **Example** |
@@ -18,4 +28,4 @@ Reversed first letters of **I** **H**ave **C**reated a **W**onderful **P**NG - i
 | **Language** | **Word** | **Meaning** |
 |--------|:------|:------|
 | Welsh language | pwchi | pwchi |
-| English language | pwchi (Welsh) | translated as **please**|
+| English language | pwchi (Welsh) | translated as **pooch** - dog|
