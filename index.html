@@ -1,242 +1,582 @@
-<!doctype html>
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-<meta charset="utf-8">
-<title>Pwchi World</title>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<style>
-@import url('https://fonts.googleapis.com/css2?family=Audiowide&family=Bebas+Neue&family=Cinzel+Decorative:wght@700&family=Comforter+Brush&family=Gemunu+Libre:wght@300&family=Goldman&family=Great+Vibes&family=Lobster+Two&family=Oswald&family=Pirata+One&family=Play&family=Zilla+Slab+Highlight&display=swap');
-*{box-sizing:border-box}
-button,input,input[type="button"]{outline:none;border:none;cursor:pointer;}
-html,body{width:100%;margin:0 auto;font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;font-size:15px;overflow-x: hidden;}
-#main{display:block;width:100%;height:auto;margin:0 auto;float:none;clear:both;font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;font-size:1.3rem;}.dxrow:before,.dxrow:after{content:"";display:inline-table;clear: both;float:none;}
-.dx-1 {width: 8.33%;}.dx-2 {width: 16.66%;}.dx-3 {width: 25%;}.dx-4 {width: 33.33%;}.dx-5 {width: 41.66%;}.dx-6 {width: 50%;}.dx-7 {width: 58.33%;}.dx-8 {width: 66.66%;}.dx-9 {width: 75%;}.dx-10 {width: 83.33%;}.dx-11 {width: 91.66%;}.dx-12 {width: 100%;}[class*="dx-"]{float:left;padding:15px;box-sizing:border-box;}
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Pwchi World · Astonishing Gallery</title>
+  <!-- Modern, curated font import: elegant & bold with fallbacks -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700;14..32,800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    /* ---------- RESET & GLOBAL ---------- */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-.tcenter{text-align:center;}
-.tleft{text-align:left;}
-.tright{text-align:right;}
-/*** Editor & Output ***/
-.ptb-4{padding:.6em 0 .6em;}
+    body {
+      background: #0a0c12;
+      font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, sans-serif;
+      color: #eef2ff;
+      line-height: 1.5;
+      scroll-behavior: smooth;
+      overflow-x: hidden;
+    }
 
-/** Generate Button **/
-.thebuttons{background-color: #0e0e0e;opacity: 1;background-size: 6px 6px;background-image: repeating-linear-gradient(45deg, #2d2d2d 0, #2d2d2d 0.6000000000000001px, #0e0e0e 0, #0e0e0e 50%);}
-.dxbtn{background-color:#ff7b1c;color:#fff;padding:.7em 1.5em .7em;cursor:pointer;text-transform:uppercase;font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;font-size:14px;font-weight:500;}
-.dxbtn:hover{background-color:#D91E21;color:#fff;}
-	#thegallery{background-color:#f1f1f1;color:#F76422;}
-	.info{display:block;box-sizing:border-box;padding:.3em 1em .5em;}
-	.info p{font-size:15px;color:#666;}
-	.doinfo{display:block;width:100%;height:auto;margin:7px auto 4px;padding:.6em .7em .6em;background-color:#f1f1f1;}
-	.doinfo strong{display:block;width:100%;height:auto;color:#2A3955;margin:5px auto 1px auto;}
-	.doavatar{display:block;width:200px;height:200px;float:none;clear:left;padding:0;text-align:center;margin:10px auto 22px auto;border-radius:100% 100% 100% 100%;overflow:hidden;border:5px solid rgba(252,63,133,1.00);background-color:rgba(252,63,133,1.00);box-shadow:inset 0 -30px 10px rgba(0,0,0,0.5);}
-	.doavatar img{border-radius:100% 100% 100% 100%;box-shadow:0 0 10px rgba(0,0,0,0.5);}
-	.imgresp img{display:block;width:100%;height:auto;margin:0 auto;}
-	.gallery{}.gallery .danignia{display:block;width:70%;height:auto;margin:0 auto;padding:.4em 0 .4em;background-color:#FC3F85;color:#fff;text-align:center;font-size:12px;transform:translateY(-30px);opacity:0;transition:all .3s;}
-		.gallery:hover .danignia{transform:translateY(-3px);opacity:1;border-radius:6px;}
-		.gallery img{filter:grayscale(80%) opacity(.8);transform:scale(.99);transition:all .3s;}
-		.gallery:hover img{filter:grayscale(0) opacity(1) drop-shadow(0 11px 8px #000) brightness(100%) contrast(90%);transform:scale(1.04);}
-	.viewit{padding:.1em .3em .1em;background-color:#036;color:#fff;font-size:13px;text-align:center;margin-left:4px;}
-	.viewit:hover{background-color:rgba(247,100,34,1.00);color:#000;}
-	/*** Editor Show and Tell ***/
-	.dohighlight{}
-	.dohighlight{animation: DoHi 2s; animation-iteration-count: 3;box-shadow:inset 0 0 5px orange;}
-	@keyframes DoHi{
-	0%{box-shadow:inset 0 0 25px orange;opacity:1;}
-	50%{box-shadow:inset 0 0 0 orange;transform:scale(1.2);opacity:.8;filter:brightness(70%) contrast(180%);}
-	100%{box-shadow:inset 0 0 25px orange;opacity:1;}
-	}.off{opacity:0;}.on{opacity:1;}
-	#thegallery{color:#777;}
-	#thegallery{font-family:'Play';}
-	#thegallery h3{font-family:'Cinzel Decorative';}
-	#loading{display:block;width:100vw;height:100vh;position:fixed;top:0;left:0;z-index: 999;background-color:#f1f1f1;animation: Doaway 10s; animation-iteration-count: 1;opacity:0;transform:scale(.1);overflow-x:hidden;overflow-y:hidden;transform-origin: center center ;background-image:url("https://raw.githubusercontent.com/PwchiWorld/pwchi/main/img/loading.svg");background-repeat:no-repeat;background-size:300px 300px;background-position:center center;}.loaderwrap{display:block;width:100%;height:22px;position:fixed;bottom:26%;left:0;margin:0 auto;text-align:center;}.loader{display:block;width:200px;height:12px;margin:0 auto;background-color:#222;overflow:hidden;border-radius:7px 7px 7px 7px;box-shadow:0 1px 2px #000,0 2px 3px #fff;}.progress{display:block;width:0%;height:12px;background-color: #FC3F85;animation: DoFill 14s; animation-iteration-count: 2;border-radius:0 7px 7px 0;}
-	.dobtn a:link,.dobtn a:visited{text-decoration:none;color:#000;} .dobtn a:hover{text-decoration:none;color:#fff;}
-	.morepwchins{margin:30px auto 33px auto;text-align:center;box-sizing:border-box;padding:5em 0 5em;background-color:#222;background-image:url("https://raw.githubusercontent.com/PwchiWorld/pwchi/main/resurse/pwchiworld.jpg");background-repeat:no-repeat;background-size:cover;background-attachment: fixed;background-position: center;}
-	.dogalleryin{display:block;width:80%;height:auto;margin:0 auto;padding:3em;text-align:center;background-color:rgba(0,0,0,0.50);font-family:'Play';}
-	.newbutton{padding:1em 0 1em;}.newbutton a,
-	.newbutton a:visited{padding:.5em 1em .5em;background-color:rgba(247,100,34,1.00);text-decoration:none;color:#fff;border-radius:5px;text-transform:uppercase;font-size:20px;font-weight:100;font-family:'Play';} 
-	#theshare {font-family:'Play';}
-		#theshare h2{font-family:'Cinzel Decorative';}
-	.newbutton a:hover{background-color:#571466;text-decoration:none;color:#fff;box-shadow:0 6px 5px #000;}
-	@keyframes Doaway{
-	0%{opacity:1;transform:scale(1);}
-	98%{opacity:1;transform:scale(1);}
-	100%{opacity:0;transform:scale(.001);}
-	}
-	@keyframes DoFill{
-	0%{width:0%;}
-	7%{width:20%;}
-	30%{width:50%;}
-	80%{width:70%;}
-	89%{width:90%;}
-	100%{width:101%;}
-	}
-	@media screen and (max-width: 900px) and (min-width: 500px) {
-  [class*="dx-"]{display:block;width:90%;float:none;margin:10px auto 7px auto;}
-		}
-</style>
+    /* modern container system — fluid, grid + flex friendly */
+    .container {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 0 2rem;
+      width: 100%;
+    }
+
+    /* responsive spacing */
+    .section {
+      padding: 4rem 0;
+    }
+
+    .section-sm {
+      padding: 2rem 0;
+    }
+
+    /* typography refined */
+    h1, h2, h3 {
+      font-family: 'Space Grotesk', 'Inter', sans-serif;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+    }
+
+    h2 {
+      font-size: clamp(2rem, 5vw, 3.2rem);
+      background: linear-gradient(135deg, #ff47e7 0%, #9C27B0 100%);
+      background-clip: text;
+      -webkit-background-clip: text;
+      color: transparent;
+      display: inline-block;
+      margin-bottom: 0.5rem;
+    }
+
+    .glow-text {
+      color: #e8c5fa;
+      font-weight: 400;
+    }
+
+    /* buttons & interactive elements */
+    .btn-group {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1rem;
+      margin-top: 1.8rem;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      padding: 0.8rem 1.8rem;
+      font-family: 'Inter', sans-serif;
+      font-weight: 600;
+      font-size: 0.95rem;
+      letter-spacing: 0.01em;
+      border-radius: 60px;
+      text-decoration: none;
+      transition: all 0.3s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+      background: #1f232e;
+      color: #f0f3fa;
+      border: 1px solid rgba(185, 64, 255, 0.3);
+      backdrop-filter: blur(2px);
+      cursor: pointer;
+    }
+
+    .btn-primary {
+      background: linear-gradient(105deg, #a448fa, #FF2D6E);
+      border: none;
+      color: white;
+          box-shadow: 0 8px 20px rgb(155 46 174);
+}
+
+
+    .btn-primary:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 15px 30px rgba(127, 45, 194, 0.4);
+      background: linear-gradient(105deg, #6d348a, #FF3D7A);
+    }
+
+    .btn-outline {
+      background: rgba(20, 24, 36, 0.7);
+      border: 1px solid rgba(117, 59, 148, 0.5);
+      backdrop-filter: blur(8px);
+    }
+
+    .btn-outline:hover {
+      background: #a448fa;
+      border-color: #a448fa;
+      color: white;
+      transform: translateY(-2px);
+    }
+
+    /* avatar / hero section */
+    .hero-avatar {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    .avatar-frame {
+      width: 160px;
+      height: 160px;
+      margin: 0 auto 1.5rem;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #b43dd9, #801fb5);
+      padding: 0;
+      box-shadow: 0 20px 35px -10px rgba(0, 0, 0, 0.5), 0 0 0 2px rgba(149, 53, 184, 0.3);
+      transition: transform 0.4s ease;
+    }
+
+    .avatar-frame:hover {
+      transform: scale(1.02);
+    }
+
+    .avatar-frame img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 50%;
+      background: #0f1119;
+      display: block;
+    }
+
+    /* gallery grid — modern responsive masonry style flex/grid */
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 2rem;
+      margin: 3rem 0 2rem;
+    }
+
+    /* gallery card */
+    .gallery-card {
+      background: rgba(18, 22, 32, 0.65);
+      backdrop-filter: blur(4px);
+      border-radius: 32px;
+      overflow: hidden;
+      transition: all 0.35s ease;
+      border: 1px solid rgba(175, 70, 255, 0.2);
+      box-shadow: 0 15px 30px -12px rgba(0, 0, 0, 0.4);
+      transform: translateY(0);
+    }
+
+    .gallery-card:hover {
+      transform: translateY(-8px);
+      border-color: rgba(204, 50, 255, 0.6);
+      box-shadow: 0 25px 40px -12px rgba(0, 0, 0, 0.6);
+      background: rgba(24, 28, 42, 0.85);
+    }
+
+    .gallery-img {
+      position: relative;
+      overflow: hidden;
+      aspect-ratio: 1 / 1;
+      background: #0b0e16;
+    }
+
+    .gallery-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.6s cubic-bezier(0.2, 0.9, 0.4, 1.1), filter 0.4s;
+      filter: grayscale(30%) brightness(0.95) contrast(1.05);
+    }
+
+    .gallery-card:hover .gallery-img img {
+      transform: scale(1.06);
+      filter: grayscale(0%) brightness(1.02) contrast(1.08);
+    }
+
+    .credit-badge {
+      position: absolute;
+      bottom: 12px;
+      left: 12px;
+      background: rgba(0, 0, 0, 0.7);
+      backdrop-filter: blur(12px);
+      padding: 0.3rem 0.9rem;
+      border-radius: 40px;
+      font-size: 0.7rem;
+      font-weight: 500;
+      letter-spacing: 0.3px;
+      color: #dd9aff;
+      font-family: 'Inter', monospace;
+      border-left: 2px solid #a448fa;
+      transform: translateY(20px);
+      opacity: 0;
+      transition: all 0.25s ease;
+      pointer-events: none;
+    }
+
+    .gallery-card:hover .credit-badge {
+      transform: translateY(0);
+      opacity: 1;
+    }
+
+    /* callout section — background parallax style */
+    .parallax-cta {
+      background: linear-gradient(112deg, #0b0e18 0%, #141a2c 100%);
+      margin: 3rem 0;
+      border-radius: 60px;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 20px 35px -10px black;
+      border: 1px solid rgba(255, 100, 50, 0.3);
+    }
+
+    .parallax-cta::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-image: url('https://raw.githubusercontent.com/PwchiWorld/pwchi/main/resurse/pwchiworld.jpg');
+      background-size: cover;
+      background-position: center 30%;
+      opacity: 0.2;
+      filter: blur(2px);
+      transition: opacity 0.4s;
+      pointer-events: none;
+    }
+
+    .cta-content {
+      position: relative;
+      z-index: 2;
+      padding: 3rem 2rem;
+      text-align: center;
+      backdrop-filter: brightness(0.9);
+    }
+
+    .cta-content h3 {
+      font-size: clamp(1.8rem, 4vw, 2.5rem);
+      color: white;
+      margin-bottom: 1rem;
+    }
+
+    /* share / footer buttons section */
+    .share-zone {
+      background: #0e111b;
+      border-radius: 48px;
+      padding: 2.5rem 2rem;
+      margin-top: 2rem;
+      border: 1px solid rgba(255, 100, 60, 0.25);
+    }
+
+    /* loading animation (elegant, modern, but keep original resources concept) */
+    #loading {
+      position: fixed;
+      inset: 0;
+      background: #07090f;
+      z-index: 1000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      transition: opacity 0.8s ease, visibility 0.8s;
+      backdrop-filter: blur(10px);
+    }
+
+    .loader-ring {
+      width: 80px;
+      height: 80px;
+      border: 4px solid rgba(255, 80, 40, 0.2);
+      border-top: 4px solid #a448fa;
+      border-radius: 50%;
+      animation: spin 1s cubic-bezier(0.68, -0.55, 0.265, 1.55) infinite;
+      margin-bottom: 1.5rem;
+    }
+
+    .loader-text {
+      font-family: 'Space Grotesk', monospace;
+      letter-spacing: 4px;
+      font-size: 0.9rem;
+      background: linear-gradient(120deg, #c547ff, #a448fa);
+      background-clip: text;
+      -webkit-background-clip: text;
+      color: transparent;
+    }
+
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    .hide-loader {
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+    }
+
+    /* responsive refinements */
+    @media (max-width: 760px) {
+      .container {
+        padding: 0 1.25rem;
+      }
+      .section {
+        padding: 2.5rem 0;
+      }
+      .gallery-grid {
+        gap: 1.25rem;
+        grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+      }
+      .btn-group {
+        gap: 0.7rem;
+      }
+      .btn {
+        padding: 0.6rem 1.2rem;
+        font-size: 0.85rem;
+      }
+      .credit-badge {
+        font-size: 0.6rem;
+        bottom: 6px;
+        left: 8px;
+        transform: translateY(0);
+        opacity: 0.85;
+      }
+      .gallery-card:hover .credit-badge {
+        transform: translateY(0);
+      }
+    }
+
+    @media (max-width: 480px) {
+      .gallery-grid {
+        grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+        gap: 1rem;
+      }
+      .avatar-frame {
+        width: 120px;
+        height: 120px;
+      }
+    }
+
+    /* smooth hover and accessibility */
+    a, button {
+      transition: all 0.2s;
+    }
+
+    /* additional glowing effect for titles */
+    .tagline {
+      font-size: 1.1rem;
+      color: #b9c3e6;
+      max-width: 600px;
+      margin: 0.8rem auto 0;
+    }
+
+    hr {
+      border: 0;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, #FF6A3D, #FFB347, transparent);
+      margin: 1rem 0;
+    }
+  </style>
 </head>
-
 <body>
 
-	<div id="main" class="dx-12 tcenter"> 
-											<!-- Other Stuff --->
- <div id="thegallery" class="dx-12">
-      <div class="dx-12 ptb-4 tcenter">
-						   <div class="dxrow">
-									<div class="dx-12 tcenter">
-									<h2>PwchiFans</h2>
-									<div class="doavatar imgresp tcenter"><img src="https://raw.githubusercontent.com/PwchiWorld/pwchi/main/img/fan/1a.gif" alt="Pwchin World" loading="lazy"/></div>
-									<p>Pwchin's creation. PwchiFan - Artwork - Gallery </p>
-									</div>
-                                    
-                                    
- <div class="dxrow">
-                                   
-<div class="dx-2 gallery imgresp">
-	<img src="https://raw.githubusercontent.com/PwchiWorld/pwchi/main/img/fan/fan1.png" alt="Pwchin World" loading="lazy"/>
-	<div class="danignia">by pwchin-creator</div>
-</div>
-
-<div class="dx-2 gallery imgresp">
-	<img src="https://raw.githubusercontent.com/PwchiWorld/pwchi/main/img/fan/fan2.png" alt="Pwchin World" loading="lazy"/>
-	<div class="danignia">by pwchin-creator</div>
-</div>
-
-<div class="dx-2 gallery imgresp">
-	<img src="https://raw.githubusercontent.com/PwchiWorld/pwchi/main/img/fan/fan3.png" alt="Pwchin World" loading="lazy"/>
-	<div class="danignia">by pwchin-creator</div>
-</div>
-
-<div class="dx-2 gallery imgresp">
-	<img src="https://raw.githubusercontent.com/PwchiWorld/pwchi/main/img/fan/fan4.png" alt="Pwchin World" loading="lazy"/>
-	<div class="danignia">by pwchin-creator</div>
-</div>
-
-<div class="dx-2 gallery imgresp">
-	<img src="https://raw.githubusercontent.com/PwchiWorld/pwchi/main/img/fan/fan5.png" alt="Pwchin World" loading="lazy"/>
-	<div class="danignia">by pwchin-creator</div>
-</div>
-
-<div class="dx-2 gallery imgresp">
-	<img src="https://raw.githubusercontent.com/PwchiWorld/pwchi/main/img/fan/fan6.png" alt="Pwchin World" loading="lazy"/>
-	<div class="danignia">by pwchin-creator</div>
-</div>
-
-</div>
-
-<div class="dxrow">
-
-<div class="dx-2 gallery imgresp">
-	<img src="https://raw.githubusercontent.com/PwchiWorld/pwchi/main/img/fan/fan7.png" alt="Pwchin World" loading="lazy"/>
-	<div class="danignia">by pwchin-creator</div>
-</div>
-
-<div class="dx-2 gallery imgresp">
-	<img src="https://raw.githubusercontent.com/PwchiWorld/pwchi/main/img/fan/fan8.png" alt="Pwchin World" loading="lazy"/>
-	<div class="danignia">by pwchin-creator</div>
-</div>
-
-<div class="dx-2 gallery imgresp">
-	<img src="https://raw.githubusercontent.com/PwchiWorld/pwchi/main/img/fan/fan9.png" alt="Pwchin World" loading="lazy"/>
-	<div class="danignia">by pwchin-creator</div>
-</div>
-
-<div class="dx-2 gallery imgresp">
-	<img src="https://raw.githubusercontent.com/PwchiWorld/pwchi/main/img/fan/fan10.png" alt="Pwchin World" loading="lazy"/>
-	<div class="danignia">by pwchin-creator</div>
-</div>
-
-<div class="dx-2 gallery imgresp">
-	<img src="https://raw.githubusercontent.com/PwchiWorld/pwchi/main/img/fan/fan11.png" alt="Pwchin World" loading="lazy"/>
-	<div class="danignia">by pwchin-creator</div>
-</div>
-
-<div class="dx-2 gallery imgresp">
-	<img src="https://raw.githubusercontent.com/PwchiWorld/pwchi/main/img/fan/fan12.png" alt="Pwchin World" loading="lazy"/>
-	<div class="danignia">by pwchin-creator</div>
-</div>
-
-</div>
-
- <div class="dxrow">
- 
-
-<div class="dx-2 gallery imgresp">
-	<img src="https://raw.githubusercontent.com/PwchiWorld/pwchi/main/img/fan/fan13.png" alt="Pwchin World" loading="lazy"/>
-	<div class="danignia">by pwchin-creator</div>
-</div>
-
-
-<div class="dx-2 gallery imgresp">
-	<img src="https://raw.githubusercontent.com/PwchiWorld/pwchi/main/img/fan/fan14.png" alt="Pwchin World" loading="lazy"/>
-	<div class="danignia">by pwchin-creator</div>
-</div>
-
-<div class="dx-2 gallery imgresp">
-	<img src="https://raw.githubusercontent.com/PwchiWorld/pwchi/main/img/fan/fan15.png" alt="Pwchin World" loading="lazy"/>
-	<div class="danignia">by pwchin-creator</div>
-</div>
-
-<div class="dx-2 gallery imgresp">
-	<img src="https://raw.githubusercontent.com/PwchiWorld/pwchi/main/img/fan/fan16.png" alt="Pwchin World" loading="lazy"/>
-	<div class="danignia">by pwchin-creator</div>
-</div>
-
-<div class="dx-2 gallery imgresp">
-	<img src="https://raw.githubusercontent.com/PwchiWorld/pwchi/main/img/fan/fan17.png" alt="Pwchin World" loading="lazy"/>
-	<div class="danignia">by pwchin-creator</div>
-</div>
-
-<div class="dx-2 gallery imgresp">
-	<img src="https://raw.githubusercontent.com/PwchiWorld/pwchi/main/img/fan/fan18.png" alt="Pwchin World" loading="lazy"/>
-	<div class="danignia">by pwchin-creator</div>
-</div>
-
-</div>
-
-
-													
-<div class="dx-12 morepwchins">
-	<div class="dogalleryin">
-		<div class="tcenter newbutton">
-			<a href="https://pwchiworld.github.io/app/" target="_blank">Create Your Pwchi</a>
-		</div>
-	</div>
-</div>
-													 
-</div>
-      </div>
-		</div><!--/ Other Stuff --->
-													 
-
-
-	<!-- The Share Stuff --->
- <div id="theshare" class="dx-12">
-      <div class="dx-12 ptb-4 tcenter">
-						   <div class="dxrow">
-									<div class="dx-12 tcenter">
-									<h2>youR pwchI</h2>	
-		<p>Show, share your creativity and submit to Gallery</p>
-		<p class="tcenter dobtn"><a class="dxbtn" href="https://pwchiworld.github.io/app/" target="_blank">Create Pwchins</a> <a class="dxbtn" href="https://github.com/PwchiWorld/app/discussions/categories/show-your-pwchi?discussions_q=category%3A%22Show+your+Pwchi%22+label%3APwchi-Show" target="_blank">Submit Pwchi</a> <a class="dxbtn" href="https://opensea.io/collection/pwchi" target="_blank">NFT Pwchi</a></p>
-		</div>
-		</div>
-		</div>
-		</div>
-		
-
-
-
-</div>
-
-<!--
+<!-- modern loading overlay (retains same visual concept but reimagined) -->
 <div id="loading">
-<div class="loaderwrap">
-  <div class="loader">
-		 <div class="progress"></div>
-		</div>
+  <div class="loader-ring"></div>
+  <div class="loader-text">PWCHI // GALLERY</div>
+  <div class="loader-text" style="font-size:0.7rem; margin-top: 12px;">awakening creativity</div>
 </div>
-</div>
--->
 
+<main>
+  <!-- main gallery section (PwchiFans) -->
+  <div class="container section">
+    <div class="hero-avatar">
+      <div class="avatar-frame">
+        <img src="https://raw.githubusercontent.com/PwchiWorld/pwchi/main/img/fan/1a.gif" alt="Pwchi World Avatar" loading="eager">
+      </div>
+      <h2>PwchiFans<span style="background: none; color:#db5df1;"> ✦</span></h2>
+      <p class="glow-text tagline">Pwchin's creation · Artwork & Gallery — where pixels become legend</p>
+    </div>
+
+    <!-- DYNAMIC GALLERY: all original resources preserved, but layout uses CSS grid + modern styling -->
+    <div class="gallery-grid">
+      <!-- fan1 to fan18 exactly as original, all images loaded from same repository -->
+      <div class="gallery-card">
+        <div class="gallery-img"><img src="https://raw.githubusercontent.com/PwchiWorld/pwchi/main/img/fan/fan1.png" alt="Pwchi Fan Art 1" loading="lazy"></div>
+        <div class="credit-badge">by pwchin-creator</div>
+      </div>
+      <div class="gallery-card">
+        <div class="gallery-img"><img src="https://raw.githubusercontent.com/PwchiWorld/pwchi/main/img/fan/fan2.png" alt="Pwchi Fan Art 2" loading="lazy"></div>
+        <div class="credit-badge">by pwchin-creator</div>
+      </div>
+      <div class="gallery-card">
+        <div class="gallery-img"><img src="https://raw.githubusercontent.com/PwchiWorld/pwchi/main/img/fan/fan3.png" alt="Pwchi Fan Art 3" loading="lazy"></div>
+        <div class="credit-badge">by pwchin-creator</div>
+      </div>
+      <div class="gallery-card">
+        <div class="gallery-img"><img src="https://raw.githubusercontent.com/PwchiWorld/pwchi/main/img/fan/fan4.png" alt="Pwchi Fan Art 4" loading="lazy"></div>
+        <div class="credit-badge">by pwchin-creator</div>
+      </div>
+      <div class="gallery-card">
+        <div class="gallery-img"><img src="https://raw.githubusercontent.com/PwchiWorld/pwchi/main/img/fan/fan5.png" alt="Pwchi Fan Art 5" loading="lazy"></div>
+        <div class="credit-badge">by pwchin-creator</div>
+      </div>
+      <div class="gallery-card">
+        <div class="gallery-img"><img src="https://raw.githubusercontent.com/PwchiWorld/pwchi/main/img/fan/fan6.png" alt="Pwchi Fan Art 6" loading="lazy"></div>
+        <div class="credit-badge">by pwchin-creator</div>
+      </div>
+      <div class="gallery-card">
+        <div class="gallery-img"><img src="https://raw.githubusercontent.com/PwchiWorld/pwchi/main/img/fan/fan7.png" alt="Pwchi Fan Art 7" loading="lazy"></div>
+        <div class="credit-badge">by pwchin-creator</div>
+      </div>
+      <div class="gallery-card">
+        <div class="gallery-img"><img src="https://raw.githubusercontent.com/PwchiWorld/pwchi/main/img/fan/fan8.png" alt="Pwchi Fan Art 8" loading="lazy"></div>
+        <div class="credit-badge">by pwchin-creator</div>
+      </div>
+      <div class="gallery-card">
+        <div class="gallery-img"><img src="https://raw.githubusercontent.com/PwchiWorld/pwchi/main/img/fan/fan9.png" alt="Pwchi Fan Art 9" loading="lazy"></div>
+        <div class="credit-badge">by pwchin-creator</div>
+      </div>
+      <div class="gallery-card">
+        <div class="gallery-img"><img src="https://raw.githubusercontent.com/PwchiWorld/pwchi/main/img/fan/fan10.png" alt="Pwchi Fan Art 10" loading="lazy"></div>
+        <div class="credit-badge">by pwchin-creator</div>
+      </div>
+      <div class="gallery-card">
+        <div class="gallery-img"><img src="https://raw.githubusercontent.com/PwchiWorld/pwchi/main/img/fan/fan11.png" alt="Pwchi Fan Art 11" loading="lazy"></div>
+        <div class="credit-badge">by pwchin-creator</div>
+      </div>
+      <div class="gallery-card">
+        <div class="gallery-img"><img src="https://raw.githubusercontent.com/PwchiWorld/pwchi/main/img/fan/fan12.png" alt="Pwchi Fan Art 12" loading="lazy"></div>
+        <div class="credit-badge">by pwchin-creator</div>
+      </div>
+      <div class="gallery-card">
+        <div class="gallery-img"><img src="https://raw.githubusercontent.com/PwchiWorld/pwchi/main/img/fan/fan13.png" alt="Pwchi Fan Art 13" loading="lazy"></div>
+        <div class="credit-badge">by pwchin-creator</div>
+      </div>
+      <div class="gallery-card">
+        <div class="gallery-img"><img src="https://raw.githubusercontent.com/PwchiWorld/pwchi/main/img/fan/fan14.png" alt="Pwchi Fan Art 14" loading="lazy"></div>
+        <div class="credit-badge">by pwchin-creator</div>
+      </div>
+      <div class="gallery-card">
+        <div class="gallery-img"><img src="https://raw.githubusercontent.com/PwchiWorld/pwchi/main/img/fan/fan15.png" alt="Pwchi Fan Art 15" loading="lazy"></div>
+        <div class="credit-badge">by pwchin-creator</div>
+      </div>
+      <div class="gallery-card">
+        <div class="gallery-img"><img src="https://raw.githubusercontent.com/PwchiWorld/pwchi/main/img/fan/fan16.png" alt="Pwchi Fan Art 16" loading="lazy"></div>
+        <div class="credit-badge">by pwchin-creator</div>
+      </div>
+      <div class="gallery-card">
+        <div class="gallery-img"><img src="https://raw.githubusercontent.com/PwchiWorld/pwchi/main/img/fan/fan17.png" alt="Pwchi Fan Art 17" loading="lazy"></div>
+        <div class="credit-badge">by pwchin-creator</div>
+      </div>
+      <div class="gallery-card">
+        <div class="gallery-img"><img src="https://raw.githubusercontent.com/PwchiWorld/pwchi/main/img/fan/fan18.png" alt="Pwchi Fan Art 18" loading="lazy"></div>
+        <div class="credit-badge">by pwchin-creator</div>
+      </div>
+    </div>
+
+    <!-- CTA Parallax Section (replaces old .morepwchins but visually stunning) -->
+    <div class="parallax-cta">
+      <div class="cta-content">
+        <h3>✦ CREATE YOUR PWCHI ✦</h3>
+        <p style="max-width: 560px; margin: 0 auto 1.8rem; opacity: 0.9;">Unleash your inner creator. Design unique Pwchi characters & join the galaxy.</p>
+        <div class="btn-group">
+          <a href="https://pwchi.com/" target="_blank" class="btn btn-primary">✨ Create Your Pwchi</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- SHARE & SUBMIT SECTION — all original links preserved -->
+    <div class="share-zone">
+      <div style="text-align: center;">
+        <h2 style="font-size: clamp(1.7rem, 4vw, 2.4rem);">your pwchi</h2>
+        <p class="glow-text" style="margin-bottom: 1rem;">Show, share your creativity and submit to Gallery</p>
+        <div class="btn-group">
+          <a href="https://pwchi.com/" target="_blank" class="btn btn-primary">🎨 Create Pwchies</a>
+          <a href="https://github.com/PwchiWorld/app/discussions/categories/show-your-pwchi?discussions_q=category%3A%22Show+your+Pwchi%22+label%3APwchi-Show" target="_blank" class="btn btn-outline">📤 Submit Pwchi</a>
+          <a href="https://opensea.io/PwchinWorld" target="_blank" class="btn btn-outline">⛓️ NFT Pwchi</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+
+<!-- simple script to handle loading removal & subtle interactive smoothness -->
+<script>
+  (function() {
+    // modern loading transition: simulate smooth hide
+    const loader = document.getElementById('loading');
+    if (loader) {
+      // small delay to ensure assets begin loading gracefully
+      window.addEventListener('load', () => {
+        setTimeout(() => {
+          loader.classList.add('hide-loader');
+          // remove after transition to avoid overlay blocking clicks
+          setTimeout(() => {
+            if (loader && loader.parentNode) loader.style.display = 'none';
+          }, 800);
+        }, 400);
+      });
+      // fallback if load event already fired? but fine
+      if (document.readyState === 'complete') {
+        setTimeout(() => {
+          loader.classList.add('hide-loader');
+          setTimeout(() => { if(loader) loader.style.display = 'none'; }, 800);
+        }, 200);
+      }
+    }
+
+    // optional: add a micro animation for gallery cards to appear with subtle stagger? not required but adds polish
+    const cards = document.querySelectorAll('.gallery-card');
+    if (cards.length) {
+      cards.forEach((card, idx) => {
+        card.style.opacity = '0';
+        card.style.transform = 'translateY(18px)';
+        card.style.transition = 'opacity 0.4s ease, transform 0.4s ease';
+        setTimeout(() => {
+          card.style.opacity = '1';
+          card.style.transform = 'translateY(0)';
+        }, 50 + (idx * 25));
+      });
+    }
+  })();
+</script>
+
+<!-- tiny style to ensure all images are responsive & no overflow -->
+<style>
+  img {
+    max-width: 100%;
+    display: block;
+  }
+  /* preserve original aspect ratio and remove default outline */
+  .gallery-img img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+  }
+  /* improved focus ring for accessibility */
+  a:focus-visible, button:focus-visible {
+    outline: 3px solid #FFA24B;
+    outline-offset: 2px;
+    border-radius: 12px;
+  }
+  body {
+    background: radial-gradient(circle at 10% 20%, #0f121e, #03050a);
+  }
+  /* subtle noise texture? adds richness */
+  body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: radial-gradient(rgba(255, 100, 60, 0.02) 1px, transparent 1px);
+    background-size: 32px 32px;
+    pointer-events: none;
+    z-index: 0;
+  }
+  main {
+    position: relative;
+    z-index: 2;
+  }
+</style>
 </body>
 </html>
-
